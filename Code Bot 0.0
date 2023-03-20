@@ -1,0 +1,29 @@
+import os
+import random
+import openai
+
+openai.api_key = "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"
+
+greetings = ["Bonjour !", "Salutation !", "Bienvenue !"]
+goodbyes = ["Au revoir !", "Bye !", "A bientot !"]
+
+print(random.choice(greetings))
+user = input("Utilisateur : ")
+user = user.lower()
+
+while (user != "bye"):
+    response = openai.Completion.create(
+    engine = "text-davinci-002",
+    prompt = user,
+    temperature = 0.7,
+    max_tokens = 709,
+    top_p = 1,
+    frequency_penalty = 0,
+    presence_penalty = 0
+    )
+    print(response.choices[0].message)
+
+    user = input("Utilisateur : ")
+    user = user.lower()
+    
+print(random.choice(goodbyes))
