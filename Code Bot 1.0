@@ -6,7 +6,7 @@ import openai
 from dotenv import load_dotenv
 
 load_dotenv()
-openai.api_key = "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"
+openai.api_key = "TOKEN"
 
 intents = discord.Intents.all()
 client = discord.Client(command_prefix='!', intents=intents)
@@ -82,4 +82,4 @@ async def on_message(message):
     await message.channel.send(response)
 
 # Start the bot
-client.run('MTA4NzM5ODE1MTQ1NzA3OTQwNw.GP1ww0.Kbxh9-_JiUwfxmcgHRDpfwKZUUTaGnOe-Qx2Pk')
+client.run('TOKEN')
